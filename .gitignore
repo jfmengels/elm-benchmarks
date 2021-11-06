@@ -2,4 +2,5 @@ elm-stuff
 *.log
 node_modules/
 .idea/
-*.html
+index.html
+elm.js
