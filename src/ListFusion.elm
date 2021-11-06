@@ -1,19 +1,21 @@
 module ListFusion exposing (main)
 
+{-| This benchmark aims to showcase avoiding multiple passes over lists is less efficient compared to
+having a single pass with the combined functions.
+-}
+
 import Benchmark exposing (..)
 import Benchmark.Runner exposing (BenchmarkProgram, program)
-
-
-increment a =
-    a + 1
 
 
 suite : Benchmark
 suite =
     let
+        tenItems : List Int
         tenItems =
             List.range 1 10
 
+        thousandItems : List Int
         thousandItems =
             List.range 1 1000
     in
@@ -45,3 +47,7 @@ main : BenchmarkProgram
 main =
     program suite
 
+
+increment : number -> number
+increment a =
+    a + 1
