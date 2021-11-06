@@ -6,6 +6,8 @@ over anonymous lambdas that call the functions themselves.
 We notice that the function composition adds quite a lot of overhead,
 as the lambda function is 3 times faster, and the difference seems to increase as you compose more functions.
 
+See the `ListAll` benchmark for a practical example.
+
 -}
 
 import Benchmark exposing (Benchmark, describe)
