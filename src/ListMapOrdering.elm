@@ -5,6 +5,10 @@ goal to preserve the original order.
 
 When you don't care about the order, then maybe consider using a map function that doesn't preserve the order.
 
+I am getting very different results randomly (see related benchmark result screenshots).
+Either the alt map is much better (+50/+100% faster) or it's SO MUCH better (+500/+600% faster),
+and I can't explain why.
+
 Related benchmarks: ListMapOrderingMultiple
 
 -}
