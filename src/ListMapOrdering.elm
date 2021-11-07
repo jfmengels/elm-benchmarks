@@ -5,6 +5,8 @@ goal to preserve the original order.
 
 When you don't care about the order, then maybe consider using a map function that doesn't preserve the order.
 
+Related benchmarks: ListMapOrderingMultiple
+
 -}
 
 import Benchmark exposing (Benchmark, describe)
