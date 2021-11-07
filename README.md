@@ -11,8 +11,7 @@ elm make --optimize src/<Benchmark name>.elm
 then open `index.html` in your browser. Ideally, you want to run a benchmark in every major browser,
 because while a benchmark can show improvements in Chrome, it can show deterioration in Safari for instance.
 
-If you wish to run these benchmarks with [`elm-optimize-level-2`]
-(https://github.com/mdgriffith/elm-optimize-level-2), you can run
+If you wish to run these benchmarks with [`elm-optimize-level-2`](https://github.com/mdgriffith/elm-optimize-level-2), you can run
 
 ```bash
 elm-optimize-level-2 src/<Benchmark name>.elm>
