@@ -6,7 +6,7 @@ was more efficient when written using `List.foldl` or using a hand-written recur
 Results: List.foldl is slower, probably because it calls a function with 2 arguments,
 which adds an overhead compared to calling a single-parameter function (no wrapping in A2/F2).
 
-Related benchmarks: ListMapOrdering
+Related benchmarks: ListMapOrdering, ListLength
 
 -}
 
