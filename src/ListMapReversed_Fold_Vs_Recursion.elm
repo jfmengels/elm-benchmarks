@@ -1,15 +1,12 @@
-module ListMapOrdering exposing (main)
+module ListMapReversed_Fold_Vs_Recursion exposing (main)
 
-{-| This benchmark aims to showcase that there is overhead in List.map in its
-goal to preserve the original order.
+{-| Comparing whether the naive implementation for the list reversing `altMap` function from `ListMapOrdering`
+was more efficient when written using `List.foldl` or using a hand-written recursive function.
 
-When you don't care about the order, then maybe consider using a map function that doesn't preserve the order.
+Results: List.foldl is slower, probably because it calls a function with 2 arguments,
+which adds an overhead compared to calling a single-parameter function (no wrapping in A2/F2).
 
-I am getting very different results randomly (see related benchmark result screenshots).
-Either the alt map is much better (+50/+100% faster) or it's SO MUCH better (+500/+600% faster),
-and I can't explain why.
-
-Related benchmarks: ListMapReversed\_Fold\_Vs\_Recursion, ListMapOrderingMultiple
+Related benchmarks: ListMapOrdering
 
 -}
 
@@ -32,6 +29,11 @@ fold func list acc =
             fold func xs (func x :: acc)
 
 
+altMap2 : (a -> b) -> List a -> List b
+altMap2 mapper list =
+    List.foldl (\a acc -> mapper a :: acc) [] list
+
+
 suite : Benchmark
 suite =
     let
@@ -43,22 +45,22 @@ suite =
         thousandItems =
             List.range 1 1000
     in
-    describe "List.map vs reversing map function"
+    describe "List.map alternative"
         [ Benchmark.compare "0 items"
-            "elm/core List.map"
-            (\() -> List.map increment [])
-            "Reversing map"
+            "Manual fold"
             (\() -> altMap increment [])
+            "Using List.foldl"
+            (\() -> altMap2 increment [])
         , Benchmark.compare "10 items"
-            "elm/core List.map"
-            (\() -> List.map increment tenItems)
-            "Reversing map"
+            "Manual fold"
             (\() -> altMap increment tenItems)
+            "Using List.foldl"
+            (\() -> altMap2 increment tenItems)
         , Benchmark.compare "1000 items"
-            "elm/core List.map"
-            (\() -> List.map increment thousandItems)
-            "Reversing map"
+            "Manual fold"
             (\() -> altMap increment thousandItems)
+            "Using List.foldl"
+            (\() -> altMap2 increment thousandItems)
         ]
 
 
