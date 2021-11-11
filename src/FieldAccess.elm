@@ -3,7 +3,7 @@ module FieldAccess exposing (main)
 {-| This benchmark shows that the Elm compiler is smart enough to understand
 that `value.a` and `value |> .a` are the same, and they both compile to the same source code.
 
-In other words, \`value |> .a doesn't create a function call, which is good for performance.
+In other words, `value |> .a` doesn't create a function call, which is good for performance.
 
 -}
 
