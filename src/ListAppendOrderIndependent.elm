@@ -1,4 +1,4 @@
-module ListAppendOrderIndependent exposing (main)
+module ListAppendOrderIndependent exposing (append, main)
 
 {-| This benchmark aims to determine whether `(++)` is faster than an append where you don't care about the order.
 
