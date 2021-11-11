@@ -7,6 +7,8 @@ Please note that you need to manually change the JS code for this benchmark to w
 
 Results: It's a lot faster!
 
+Related benchmarks: MutationExploration.ListFilter
+
 -}
 
 import Benchmark exposing (Benchmark, describe)
@@ -53,7 +55,7 @@ suite =
             "elm/core List.map"
             (\() -> List.map increment tenItems)
             "mutating map"
-            (\() -> mutatingListMap increment (List.range 1 10))
+            (\() -> mutatingListMap increment tenItems)
         , Benchmark.compare "1000 items"
             "elm/core List.map"
             (\() -> List.map increment thousandItems)
