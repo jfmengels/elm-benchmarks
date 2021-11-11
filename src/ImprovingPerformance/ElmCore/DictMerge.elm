@@ -1,4 +1,4 @@
-module DictMerge exposing (main)
+module ImprovingPerformance.ElmCore.DictMerge exposing (main)
 
 {-| Changing `Dict.merge` to use `Basics.compare` rather than comparing the value twice.
 
@@ -9,7 +9,7 @@ I tried using the following JS code manually, and that version seems faster, but
 
 ```js
 var _Utils_cmp_Hack = F2(_Utils_cmp);
-var $author$project$DictMerge$altDictMerge = F6(
+var $author$project$ImprovingPerformance$ElmCore$DictMerge$altDictMerge = F6(
     function (leftStep, bothStep, rightStep, leftDict, rightDict, initialResult) {
         var stepState = F3(
             function (rKey, rValue, _v0) {

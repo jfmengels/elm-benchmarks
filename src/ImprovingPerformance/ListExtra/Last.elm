@@ -1,4 +1,4 @@
-module ListExtra.Last exposing (main)
+module ImprovingPerformance.ListExtra.Last exposing (main)
 
 {-| Changing the order of patterns in `ListExtra.last` to have the more common patterns first.
 

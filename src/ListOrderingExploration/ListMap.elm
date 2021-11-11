@@ -1,4 +1,4 @@
-module ListMapOrdering exposing (main)
+module ListOrderingExploration.ListMap exposing (main)
 
 {-| This benchmark aims to showcase that there is overhead in List.map in its
 goal to preserve the original order.
@@ -9,7 +9,7 @@ I am getting very different results randomly (see related benchmark result scree
 Either the alt map is much better (+50/+100% faster) or it's SO MUCH better (+500/+600% faster),
 and I can't explain why.
 
-Related benchmarks: ListMapReversed\_Fold\_Vs\_Recursion, ListMapOrderingMultiple
+Related benchmarks: ListOrderingExploration.ListMapFoldVsRecursion, ListOrderingExploration.ListMapChained
 
 -}
 

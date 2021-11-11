@@ -1,4 +1,4 @@
-module IndexMap exposing (main)
+module WhatIsFaster.IndexMap exposing (main)
 
 {-| This benchmark aims to showcase how creating your own specific list function can be more efficient
 than combining multiple list functions.

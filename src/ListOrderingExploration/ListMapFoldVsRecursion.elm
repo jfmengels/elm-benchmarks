@@ -1,12 +1,12 @@
-module ListMapReversed_Fold_Vs_Recursion exposing (main)
+module ListOrderingExploration.ListMapFoldVsRecursion exposing (main)
 
-{-| Comparing whether the naive implementation for the list reversing `altMap` function from `ListMapOrdering`
+{-| Comparing whether the naive implementation for the list reversing `altMap` function from `ListMap`
 was more efficient when written using `List.foldl` or using a hand-written recursive function.
 
 Results: List.foldl is slower, probably because it calls a function with 2 arguments,
 which adds an overhead compared to calling a single-parameter function (no wrapping in A2/F2).
 
-Related benchmarks: ListMapOrdering, ListLength
+Related benchmarks: ListMap, ListLength
 
 -}
 

@@ -1,11 +1,11 @@
-module ListExtraPredicateList_Vs_Fold exposing (main)
+module ImprovingPerformance.PredicateList_Vs_Fold exposing (main)
 
-{-| Comparing `List.Extra.predicateList` between the implementation suggested in `ListExtraPredicateList` and
+{-| Comparing `predicateList` between the implementation suggested in `ImprovingPerformance.PredicateList` and
 an implementation using `List.foldr`.
 
 Result: Manual recursion is faster. I imagine it's because we do more function calls in the `foldr` version?
 
-Related benchmarks: ListExtraPredicateList
+Related benchmarks: ImprovingPerformance.PredicateList
 
 -}
 
@@ -59,7 +59,7 @@ suite =
             List.repeat 500 [ ( 1, True ), ( 2, False ) ]
                 |> List.concat
     in
-    describe "List.Extra.predicateList"
+    describe "predicateList"
         [ Benchmark.compare "0 elements"
             "Using List.foldr"
             (\() -> predicateListFold [])

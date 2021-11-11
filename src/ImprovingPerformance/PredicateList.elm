@@ -1,6 +1,6 @@
-module ListExtraPredicateList exposing (main)
+module ImprovingPerformance.PredicateList exposing (main)
 
-{-| Changing `List.Extra.predicateList` to use a more efficient recursive function.
+{-| Changing `predicateList` to use a more efficient recursive function.
 -}
 
 import Benchmark exposing (Benchmark, describe)
@@ -46,7 +46,7 @@ suite =
             List.repeat 500 [ ( 1, True ), ( 2, False ) ]
                 |> List.concat
     in
-    describe "List.Extra.predicateList"
+    describe "predicateList"
         [ Benchmark.compare "0 elements"
             "Original"
             (\() -> predicateList [])

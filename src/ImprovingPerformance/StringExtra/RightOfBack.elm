@@ -1,9 +1,9 @@
-module StringExtra.RightOfBack exposing (main)
+module ImprovingPerformance.StringExtra.RightOfBack exposing (main)
 
 {-| Changing `String.Extra.rightOfBack`. There were several places where there was unnecessary overhead, so I tried
 multiple iterative improvements.
 
-Related benchmarks: StringExtra.LeftOfBack
+Related benchmarks: ImprovingPerformance.StringExtra.LeftOfBack
 
 -}
 

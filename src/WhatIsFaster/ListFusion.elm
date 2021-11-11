@@ -1,4 +1,4 @@
-module ListFusion exposing (main)
+module WhatIsFaster.ListFusion exposing (main)
 
 {-| This benchmark aims to showcase avoiding multiple passes over lists is less efficient compared to
 having a single pass with the combined functions.

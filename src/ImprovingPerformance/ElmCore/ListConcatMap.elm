@@ -1,8 +1,8 @@
-module ListConcatMap exposing (main)
+module ImprovingPerformance.ElmCore.ListConcatMap exposing (main)
 
 {-| Changing `List.concatMap` to be faster.
 
-Related benchmarks: FunctionComposition
+Related benchmarks: WhatIsFaster.FunctionComposition
 
 Note that there is already a pull request to make `List.concatMap` faster: <https://github.com/elm/core/pull/1027>.
 

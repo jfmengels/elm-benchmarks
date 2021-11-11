@@ -1,4 +1,4 @@
-module FunctionComposition exposing (main)
+module WhatIsFaster.FunctionComposition exposing (main)
 
 {-| This benchmark aims to showcase the difference between functions composed
 over anonymous lambdas that call the functions themselves.
@@ -6,7 +6,7 @@ over anonymous lambdas that call the functions themselves.
 We notice that the function composition adds quite a lot of overhead,
 as the lambda function is 3 times faster, and the difference seems to increase as you compose more functions.
 
-See the `ListAll` benchmark for a practical example.
+See the `ImprovingPerformance.ElmCore.ListAll` benchmark for a practical example.
 
 -}
 

@@ -1,6 +1,6 @@
-module ListMapOrderingMultiple exposing (main)
+module ListOrderingExploration.ListMapChained exposing (main)
 
-{-| This benchmark builds upon ListMapOrdering and tries to determine whether applying the
+{-| This benchmark builds upon ListMap and tries to determine whether applying the
 alternative map function that reverses the order twice is faster than applying the core `List.map` function.
 
 Since applying the alternative map function twice reverses the list twice, the order should be the same as for `List.map`.
@@ -9,7 +9,7 @@ Result: the performance is worse, but not by _that_ much.
 
 It would probably be interesting to compare between applying a single alternative map + List.reverse.
 
-Related benchmarks: ListMapOrdering
+Related benchmarks: ListMap
 
 -}
 

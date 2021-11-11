@@ -1,16 +1,16 @@
-module ListConcatMapOrderIndependent exposing (main)
+module ListOrderingExploration.ListConcatMap exposing (main)
 
 {-| Changing `List.concatMap` to be faster, if we didn't care about the order of the elements.
 For instance when you turn the result of this into a `Set`.
 
-Related benchmarks: ListConcatMap, ListMapOrdering, ListAppendOrderIndependent
+Related benchmarks: ImprovingPerformance.ElmCore.ListConcatMap, ListMap, ListAppend
 
 -}
 
 import Benchmark exposing (Benchmark)
 import Benchmark.Alternative exposing (rank)
 import Benchmark.Runner.Alternative as BenchmarkRunner
-import ListAppendOrderIndependent
+import ListOrderingExploration.ListAppend as ListAppend
 
 
 fastConcatMapWithLambda : (a -> List b) -> List a -> List b
@@ -26,12 +26,12 @@ orderIndependentConcatMap fn list =
 
 
 {-| Surprisingly a bit slower than `orderIndependentConcatMap`.
-It's surprising to me because `ListAppendOrderIndependent.append` is faster than `(++)`
-(see ListAppendOrderIndependent benchmark)
+It's surprising to me because `ListAppend.append` is faster than `(++)`
+(see ListAppend benchmark)
 -}
 orderIndependentConcatMapWithCustomAppend : (a -> List b) -> List a -> List b
 orderIndependentConcatMapWithCustomAppend fn list =
-    List.foldl (\item acc -> ListAppendOrderIndependent.append (fn item) acc) [] list
+    List.foldl (\item acc -> ListAppend.append (fn item) acc) [] list
 
 
 {-| Pretty slow, though I don't know why.

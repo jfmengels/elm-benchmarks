@@ -1,4 +1,4 @@
-module ListAppendAndPlusPlus exposing (main)
+module WhatIsFaster.ListAppendAndPlusPlus exposing (main)
 
 {-| This benchmark aims to determine whether `List.append` or (++) is the fastest for concatenating lists.
 

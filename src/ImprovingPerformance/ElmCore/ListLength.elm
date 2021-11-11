@@ -1,4 +1,4 @@
-module ListLength exposing (main)
+module ImprovingPerformance.ElmCore.ListLength exposing (main)
 
 {-| Changing `List.length` to use a manually recursive function rather than `List.foldl`.
 

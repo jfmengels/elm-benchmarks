@@ -1,4 +1,4 @@
-module FieldAccess exposing (main)
+module WhatIsFaster.FieldAccess exposing (main)
 
 {-| This benchmark shows that the Elm compiler is smart enough to understand
 that `value.a` and `value |> .a` are the same, and they both compile to the same source code.
