@@ -2,7 +2,7 @@ module ImprovingPerformance.ElmCore.ListAll exposing (main)
 
 {-| Changing `List.all` to use a lambda rather than composing functions.
 
-Related benchmarks: WhatIsFaster.FunctionComposition\`
+Related benchmarks: ListOrderingExploration.ListMapFoldVsRecursion
 
 -}
 

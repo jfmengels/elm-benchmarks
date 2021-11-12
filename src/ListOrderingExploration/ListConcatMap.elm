@@ -3,7 +3,7 @@ module ListOrderingExploration.ListConcatMap exposing (main)
 {-| Changing `List.concatMap` to be faster, if we didn't care about the order of the elements.
 For instance when you turn the result of this into a `Set`.
 
-Related benchmarks: ImprovingPerformance.ElmCore.ListConcatMap, ListMap, ListAppend
+Related benchmarks: ImprovingPerformance.ElmCore.ListConcatMap, ListOrderingExploration.ListMap, ListOrderingExploration.ListAppend
 
 -}
 

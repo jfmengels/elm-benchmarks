@@ -4,7 +4,7 @@ module ListOrderingExploration.ListAppend exposing (append, main)
 
 Result: The custom append is about 2x faster.
 
-Related benchmarks: ListAppendAndPlusPlus
+Related benchmarks: WhatIsFaster.ListAppendAndPlusPlus
 
 -}
 

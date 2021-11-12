@@ -6,7 +6,7 @@ over anonymous lambdas that call the functions themselves.
 We notice that the function composition adds quite a lot of overhead,
 as the lambda function is 3 times faster, and the difference seems to increase as you compose more functions.
 
-See the `ImprovingPerformance.ElmCore.ListAll` benchmark for a practical example.
+Related benchmarks: ImprovingPerformance.ElmCore.ListAll
 
 -}
 
