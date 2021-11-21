@@ -17,7 +17,9 @@ var _nativeSetFromList = function (arr) {
 };
 ```
 
-Results: It's faster by a noticeable margin.
+Results: It's faster by a noticeable margin. We can probably do better by removing the A2 wrapping.
+
+Related benchmarks: NativeJsArrayExploration.DictFromLiteral
 
 -}
 
