@@ -7,6 +7,11 @@
 </head>
 <body id="body">
   <main id="app"></main>
-  <script>var app = Elm.ListAll.init({node: document.getElementById("app")});</script>
+  <script>
+    var elmApp = Elm;
+    while(!elmApp.init) {
+      elmApp = elmApp[Object.keys(elmApp)[0]];
+    }
+    var app = elmApp.init({node: document.getElementById("app")});</script>
 </body>
 </html>
