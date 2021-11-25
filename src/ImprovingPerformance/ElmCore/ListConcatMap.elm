@@ -13,14 +13,8 @@ import Benchmark.Alternative exposing (rank)
 import Benchmark.Runner.Alternative as BenchmarkRunner
 
 
-fastConcatMap : (a -> List b) -> List a -> List b
-fastConcatMap fn list =
-    List.foldr (fn >> (++)) [] list
-
-
-fastConcatMapWithLambda : (a -> List b) -> List a -> List b
-fastConcatMapWithLambda fn list =
-    List.foldr (\item acc -> fn item ++ acc) [] list
+originalConcat f list =
+    List.concat (List.map f list)
 
 
 suite : Benchmark
@@ -32,9 +26,8 @@ suite =
     in
     rank "List.concatMap"
         (\f -> f (always [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]) range)
-        [ ( "Original", List.concatMap )
-        , ( "Fast concatMap", fastConcatMap )
-        , ( "Fast concatMap with lambda", fastConcatMapWithLambda )
+        [ ( "Original", originalConcat )
+        , ( "Using JS", List.concatMap )
         ]
 
 
