@@ -21,7 +21,7 @@ import Benchmark.Runner exposing (BenchmarkProgram, program)
 {-| Implementation to be replaced manually by:
 
 ```js
-var $author$project$MutationExploration$ListMap$mutatingListFilter = F2(
+var $author$project$MutationExploration$ListFilter$mutatingListFilter = F2(
     function (isGood, list) {
         // Find the start of the list
         var start;
