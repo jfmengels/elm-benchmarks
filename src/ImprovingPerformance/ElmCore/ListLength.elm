@@ -4,6 +4,9 @@ module ImprovingPerformance.ElmCore.ListLength exposing (main)
 
 Related benchmarks: ListMapReversed\_Fold\_Vs\_Recursion
 
+**NOTE**: When compiling with `elm-optimize-level-2`, this version is not better thant the version in `elm/core`.
+Therefore, there may not be a need to get this into `elm/core`.
+
 -}
 
 import Benchmark exposing (Benchmark, describe)
