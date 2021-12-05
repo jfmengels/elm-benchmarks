@@ -32,23 +32,25 @@ combineNewHelp list acc =
 suite : Benchmark
 suite =
     let
-        tenOks =
+        tenElements : List (Maybe Int)
+        tenElements =
             [ Just 2, Just 7, Just 3, Just 2, Just 4, Just 7, Just 4, Just 8, Just 6, Just 1 ]
 
-        withError =
+        withNothing : List (Maybe Int)
+        withNothing =
             [ Just 2, Nothing, Just 3, Just 2, Just 4, Just 7, Just 4, Just 8, Just 6, Just 1 ]
     in
     describe "Maybe.Extra.combine"
         [ Benchmark.compare "10 Justs"
             "List.foldlr"
-            (\() -> combine tenOks)
+            (\() -> combine tenElements)
             "Recursion"
-            (\() -> combineNew tenOks)
-        , Benchmark.compare "with error"
+            (\() -> combineNew tenElements)
+        , Benchmark.compare "With Nothing"
             "List.foldlr"
-            (\() -> combine withError)
+            (\() -> combine withNothing)
             "Recursion"
-            (\() -> combineNew withError)
+            (\() -> combineNew withNothing)
         ]
 
 
