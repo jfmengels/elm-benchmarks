@@ -26,6 +26,7 @@ var $author$project$ImprovingPerformance$ElmCore$ListMap2$listMap2v2 = F3(functi
 ```
 
 -}
+listMap2v2 : (a -> b -> result) -> List a -> List b -> List result
 listMap2v2 =
     List.map2
 
