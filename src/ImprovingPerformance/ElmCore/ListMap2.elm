@@ -27,20 +27,20 @@ var $author$project$ImprovingPerformance$ElmCore$ListMap2$listMap2v2 = F3(functi
 
 -}
 listMap2v2 : (a -> b -> result) -> List a -> List b -> List result
-listMap2v2 =
-    List.map2
+listMap2v2 f a b =
+    List.map2 f a b
 
 
 suite : Benchmark
 suite =
     let
-        tenElements : List number
+        tenElements : List Int
         tenElements =
-            List.repeat 10 1
+            List.range 1 10
 
-        thousandElements : List number
+        thousandElements : List Int
         thousandElements =
-            List.repeat 1000 1
+            List.range 1 1000
     in
     describe "List.map2"
         [ Benchmark.compare "10 elements"
