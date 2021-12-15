@@ -1,6 +1,6 @@
-module WhatIsFaster.ListFusion exposing (main)
+module FusionExploration.ListMap exposing (main)
 
-{-| This benchmark aims to showcase avoiding multiple passes over lists is less efficient compared to
+{-| This benchmark aims to showcase avoiding multiple passes over lists using List.map is less efficient compared to
 having a single pass with the combined functions.
 -}
 
