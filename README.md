@@ -1,6 +1,10 @@
 # Misc benchmarks for Elm code
 
-This repository is a collection of benchmarks I created.
+This repository is a collection of benchmarks I created, through explorations on how to make Elm code faster and plain curiosity.
+
+**NOTE** that all of these benchmarks are to be taken with a grain of salt. For instance, some things I tried improving turn out
+worse than the original idea, some may not see improvements in all of the JavaScript runtimes, and some amazing results get
+eclipsed by better changes already in [`elm-optimize-level-2`](https://github.com/mdgriffith/elm-optimize-level-2).
 
 To run a benchmark:
 
@@ -25,4 +29,3 @@ Feel free to share these benchmarks. If you do, please link to this repo
 so that others can have a go at changing the benchmarks themselves.
 
 If you find problems in the way some of these benchmarks are done, please open an issue.
-I don't necessarily aim to maintain these benchmarks, but I'm sure I'd learn something!
