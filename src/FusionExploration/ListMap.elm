@@ -4,7 +4,7 @@ module FusionExploration.ListMap exposing (main)
 having a single pass with the combined functions.
 -}
 
-import Benchmark exposing (..)
+import Benchmark exposing (Benchmark, describe)
 import Benchmark.Runner exposing (BenchmarkProgram, program)
 
 
@@ -19,7 +19,7 @@ suite =
         thousandItems =
             List.range 1 1000
     in
-    describe "List.map comparison"
+    describe "List.map fusion"
         [ Benchmark.compare "10 items, 2 functions"
             "Multiple maps"
             (\() -> tenItems |> List.map increment |> List.map increment)
