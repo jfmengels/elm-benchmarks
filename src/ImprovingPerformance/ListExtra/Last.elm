@@ -1,6 +1,6 @@
 module ImprovingPerformance.ListExtra.Last exposing (main)
 
-{-| Changing the order of patterns in `ListExtra.last` to have the more common patterns first.
+{-| Changing the order of patterns in `List.Extra.last` to have the more common patterns first.
 
 The results are very similar to the original (slightly worse even?), because the compiler seems to be smart enough to know to group
 the non-empty cases in the same branch.
