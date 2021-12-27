@@ -8,24 +8,24 @@ import Benchmark exposing (Benchmark, describe)
 import Benchmark.Runner exposing (BenchmarkProgram, program)
 
 
-tcoHelper : (a -> b) -> List a -> List b -> List b
-tcoHelper mapper list acc =
+tco : (a -> b) -> List a -> List b -> List b
+tco mapper list acc =
     case list of
         [] ->
             acc
 
         x :: xs ->
-            tcoHelper mapper xs (mapper x :: acc)
+            tco mapper xs (mapper x :: acc)
 
 
-nonTcoHelper : (a -> b) -> List a -> List b -> List b
-nonTcoHelper mapper list acc =
+nonTco : (a -> b) -> List a -> List b -> List b
+nonTco mapper list acc =
     case list of
         [] ->
             acc
 
         x :: xs ->
-            nonTcoHelper mapper xs <| (mapper x :: acc)
+            nonTco mapper xs <| (mapper x :: acc)
 
 
 suite : Benchmark
@@ -38,9 +38,9 @@ suite =
     describe "Comparing TCO vs non-TCO functions"
         [ Benchmark.compare "List.map-like"
             "Non-TCO version"
-            (\() -> nonTcoHelper increment thousandItems [])
+            (\() -> nonTco increment thousandItems [])
             "TCO version"
-            (\() -> tcoHelper increment thousandItems [])
+            (\() -> tco increment thousandItems [])
         ]
 
 
