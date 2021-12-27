@@ -80,7 +80,7 @@ suite =
     in
     describe "Comparing inline recursive functions vs top-level recursive functions"
         [ Benchmark.compare "List.map-like"
-            ("External function" ++ "ok")
+            "External function"
             (\() -> mapperWithExternalFunction increment thousandItems)
             "Inline function"
             (\() -> mapperWithLetFunction increment thousandItems)
