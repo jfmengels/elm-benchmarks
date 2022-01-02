@@ -2,7 +2,7 @@ module TailCallRecursionExploration.ListFilter exposing (main)
 
 {-| Comparing the performance difference between the native List.filter and one using tail call recursion modulo cons.
 
-Result: Slow with Elm 0.19.1, but super fast once tail recursion modulo cons.
+Result: Slow with Elm 0.19.1, but super fast with tail recursion modulo cons.
 
 -}
 
