@@ -14,8 +14,11 @@ naiveRepeat n str =
     if n <= 0 then
         ""
 
+    else if Bitwise.and n 1 == 0 then
+        naiveRepeat (Bitwise.shiftRightBy 1 n) (str ++ str ++ "")
+
     else
-        "" ++ str ++ naiveRepeat (n - 1) str
+        "" ++ str ++ naiveRepeat (Bitwise.shiftRightBy 1 n) (str ++ str ++ "")
 
 
 
