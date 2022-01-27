@@ -1,4 +1,4 @@
-module ImprovingPerformance.ElmCore.ListMap2 exposing (main)
+module TailCallRecursionExploration.ListMap2 exposing (main)
 
 {-| Comparing the performance difference between the native List.filter and one using tail call recursion modulo cons.
 
