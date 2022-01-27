@@ -1,4 +1,4 @@
-module FallthroughExploration.ListMap5 exposing (main)
+module FallthroughExploration.ListMap5Collapsed exposing (main)
 
 {-| Changing `List.map5` to use fallthroughs instead of duplicated else cases.
 
@@ -48,7 +48,7 @@ map5Untouched f zs ys xs ws vs =
 {-| Implementation to be replaced manually by:
 
 ```js
-var $author$project$FallthroughExploration$ListMap5$map5Collapsed = F6(
+var $author$project$FallthroughExploration$ListMap5Collapsed$map5Collapsed = F6(
     function (f, zs, ys, xs, ws, vs) {
         if (zs.b) {
             var z = zs.a;
@@ -68,7 +68,7 @@ var $author$project$FallthroughExploration$ListMap5$map5Collapsed = F6(
                             return A2(
                                 $elm$core$List$cons,
                                 A5(f, z, y, x, w, v),
-                                A6($author$project$FallthroughExploration$ListMap5$map5Collapsed, f, zs_, ys_, xs_, ws_, vs_));
+                                A6($author$project$FallthroughExploration$ListMap5Collapsed$map5Collapsed, f, zs_, ys_, xs_, ws_, vs_));
                         }
                     }
                 }
