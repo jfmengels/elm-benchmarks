@@ -1,42 +1,30 @@
 module ImprovingPerformance.ElmCore.StringStartsWith2 exposing (main)
 
-{-| Testing different alternatives to `String.startsWith`.
-
-The main issue with the original function is that it uses `indexOf`, which may go through the entire String
-before noticing it doesn't find anything.
+{-| Building on top of `ImprovingPerformance.ElmCore.StringStartsWith2` to try and find the ideal implementation.
 
 The different alternatives:
 
-1.  ES2015 `String.prototype.startWith` function (not available in IE)
-    <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith>
-2.  Slicing the string with the size of the prefix to find, and checking whether they're equal.
-3.  Iterating through the string and comparing one character at a time.
+1.  A `for` loop
+2.  A `for` loop but backwards
+3.  A `while` loop
 
 Please note that you need to manually change the JS code for this benchmark to work. 2 functions have to be replaced.
 
-Also note that I have not fully checked whether the implementations always has the same behavior as the original.
+Results:
 
-Results: Option 3 (iterating with a loop) is the fastest. On Chrome it is as fast as option 1, but on Firefox it is about 50% faster than option 1.
-The original is just horrendously slow for long strings where the value is not found.
+  - Going backwards doesn't seem to make much difference.
+  - On Firefox, all 3 implements are extremely similar.
+  - On Chrome, the `while` seems to be ~10% faster than the rest, sometimes?
+
+So the while loop seems to be the fastest implementation here.
+
+Related benchmarks: ImprovingPerformance.ElmCore.StringStartsWith
 
 -}
 
 import Benchmark exposing (Benchmark)
 import Benchmark.Alternative exposing (rank)
 import Benchmark.Runner.Alternative as BenchmarkRunner
-
-
-{-| To be replaced with:
-
-    var $author$project$ImprovingPerformance$ElmCore$StringStartsWith2$es2015_startsWith = F2(
-        function (prefix, str) {
-            return str.startsWith(prefix);
-        });
-
--}
-es2015_startsWith : String -> String -> Bool
-es2015_startsWith prefix str =
-    String.startsWith prefix str
 
 
 {-| To be replaced with:
@@ -128,7 +116,7 @@ functions =
     [ ( "For loops", altFor )
     , ( "For loops backwards", altForBackwards )
     , ( "While loop", altWhile )
-    , ( "ES2015 startsWith", es2015_startsWith )
+    , ( "Original", String.startsWith )
     ]
 
 

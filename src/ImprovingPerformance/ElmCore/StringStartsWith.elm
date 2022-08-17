@@ -19,6 +19,8 @@ Also note that I have not fully checked whether the implementations always has t
 Results: Option 3 (iterating with a loop) is the fastest. On Chrome it is as fast as option 1, but on Firefox it is about 50% faster than option 1.
 The original is just horrendously slow for long strings where the value is not found.
 
+Related benchmarks: ImprovingPerformance.ElmCore.StringStartsWith2 (finding the ideal implementation).
+
 -}
 
 import Benchmark exposing (Benchmark)
