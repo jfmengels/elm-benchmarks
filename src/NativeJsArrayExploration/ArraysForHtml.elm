@@ -158,6 +158,8 @@ import Benchmark exposing (Benchmark)
 import Benchmark.Runner exposing (BenchmarkProgram, program)
 import Html exposing (Html)
 import Html.Attributes
+import Svg
+import Svg.Attributes
 
 
 {-| To replace by the following code, when evaluating the optimized version.
@@ -206,6 +208,13 @@ view () =
         , Html.button [ Html.Attributes.class "button" ] [ Html.text "Button" ]
         , Html.text "to make some"
         , Html.p [] [ Html.text "context" ]
+        , Svg.svg []
+            [ Svg.rect
+                [ Svg.Attributes.x "10"
+                , Svg.Attributes.y "10"
+                ]
+                []
+            ]
         ]
 
 

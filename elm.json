@@ -9,6 +9,7 @@
             "elm/browser": "1.0.2",
             "elm/core": "1.0.5",
             "elm/html": "1.0.0",
+            "elm/svg": "1.0.1",
             "elm-explorations/benchmark": "1.0.2",
             "lue-bird/elm-alternative-benchmark-runner": "1.0.0"
         },
