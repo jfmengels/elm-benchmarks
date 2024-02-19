@@ -1,11 +1,11 @@
-module WhatIsFaster.SetMemberOrMultipleComparisons exposing (main)
+module WhatIsFaster.CaseOfOrMultipleComparisons exposing (main)
 
 {-| This benchmark aims to figure out what is faster between multiple comparisons such as `a == x || a == y || ... || a == z` and the same done using
-`set = Set.fromList [ x, y, ..., z ]` and `Set.member a set`.
+a case expression.
 
 This likely depends on the number of elements we need to compare to.
 
-Related benchmarks: WhatIsFaster.CaseOfOrMultipleComparisons
+Related benchmarks: WhatIsFaster.SetMemberOrMultipleComparisons
 
 -}
 
@@ -26,11 +26,6 @@ elements =
     ]
 
 
-elementsAsSet : Set String
-elementsAsSet =
-    Set.fromList elements
-
-
 comparison : String -> Bool
 comparison str =
     (str == "*")
@@ -42,19 +37,47 @@ comparison str =
         || (str == "/")
 
 
+caseOf : String -> Bool
+caseOf str =
+    case str of
+        "*" ->
+            True
+
+        "{" ->
+            True
+
+        "}" ->
+            True
+
+        "[" ->
+            True
+
+        "]" ->
+            True
+
+        "?" ->
+            True
+
+        "/" ->
+            True
+
+        _ ->
+            False
+
+
 suite : Benchmark
 suite =
-    describe ("Set.member vs multiple comparisons (" ++ String.fromInt (List.length elements) ++ " elements)")
+    describe "case of vs multiple comparisons"
         [ Benchmark.compare "Not found"
-            "Set.member"
-            (\() -> Set.member "a" elementsAsSet)
+            "Case of"
+            (\() -> caseOf "a")
             "Comparison"
             (\() -> comparison "a")
         , Benchmark.compare "Found"
-            "Set.member"
-            (\() -> List.map (\s -> Set.member s elementsAsSet) elements)
+            "Case of"
+            (\() -> List.map caseOf elements)
             "Comparison"
-            (\() -> List.map (\s -> comparison s) elements)
+            (\() -> List.map comparison elements)
         ]
 
 
