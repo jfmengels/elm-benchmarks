@@ -49,12 +49,12 @@ es2015_startsWith prefix str =
             var strLength = str.length;
             var i;
             if (strLength < prefixLength) {
-                return $elm$core$Basics$False;
+                return false;
             }
             for (i = 0; i < prefixLength; i++) {
-                if (prefix[i] !== str[i]) { return $elm$core$Basics$False; }
+                if (prefix[i] !== str[i]) { return false; }
             }
-            return $elm$core$Basics$True;
+            return true;
         });
 
 -}
